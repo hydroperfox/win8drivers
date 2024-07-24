@@ -77,8 +77,8 @@ Linha:1 character:1
 
 ## Answer
 
-(https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6)
-(https://ss64.com/nt/devcon.html)
+* https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
+* https://ss64.com/nt/devcon.html
 
 The DevCon command can silently install the drivers without the certificate, so you can forget the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within a component of a Microsoft kit.
 
