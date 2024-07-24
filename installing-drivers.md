@@ -77,6 +77,16 @@ Linha:1 character:1
 
 ## Answer
 
+(https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6)
+(https://ss64.com/nt/devcon.html)
+
 The DevCon command can silently install the drivers without the certificate, so you can forget the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within a component of a Microsoft kit.
 
-Assuming you have `devcon.exe` in your local environment, follow these steps:
+When installing the Microsoft product containing DevCon, you will:
+
+* Install the [Windows Driver Kit (WDK)](https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)
+* Install [Microsoft .NET Framework 4.6](https://www.microsoft.com/pt-br/download/details.aspx?id=48137)
+* Install Visual Studio 2022 (the [Community](https://visualstudio.microsoft.com/vs/community/) version for example)
+* Through Visual Studio, install Windows SDK for desktop apps (just check the component's checkbox and download and install it)
+
+Assuming you already have `devcon.exe` in your local environment, follow these steps:
