@@ -41,7 +41,7 @@ Number of successful imports: 0
 
 I would like to know if there is a way to pass through this error.
 
-# Update
+## Update
 
 Instead of the Command Prompt, I have tried the Windows PowerShell as instructed [here](https://superuser.com/questions/1420011/how-do-i-install-drivers-silently-with-pnputil-exe).
 
@@ -75,5 +75,8 @@ Linha:1 character:1
     + FullyQualifiedErrorId : CryptographicException
 ```
 
----
+## Answer
 
+The DevCon command can silently install the drivers without the certificate, so you can forget the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within a component of a Microsoft kit.
+
+Assuming you have `devcon.exe` in your local environment, follow these steps:
