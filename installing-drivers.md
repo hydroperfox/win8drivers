@@ -49,12 +49,13 @@ Instead of the Command Prompt, I have tried the Windows PowerShell as instructed
 
 Execute PowerShell as administrator and perform the following steps.
 
-1. Navigate to your driver's folder containing the INF file through the `cd` command.
-2. Run `$signature = Get-AuthenticodeSignature <certificate filename>`, where the certificate filename might be a file with the **.cat** extension; so you obtain the driver's certificate in your PowerShell session.
+1. Run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine`
+2. Navigate to your driver's folder containing the INF file through the `cd` command.
 
 Now run these commands to install your driver:
 
 ```
+$signature = Get-AuthenticodeSignature <CAT certificate filename>
 $store = Get-Item -Path Cert:\LocalMachine\TrustedPublisher
 $store.Open("ReadWrite")
 $store.Add($signature.SignerCertificate)
