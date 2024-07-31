@@ -1,4 +1,6 @@
-# How to install major Windows driver in minor Windows through pnputil.exe
+# Installing modern drivers in a previous Windows version
+
+## Case 1
 
 I am in dual boot between Windows 11 (originally a Windows 10) and Windows 8.1. I have copied my Windows 11 drivers into a flash drive and passed them to the Windows 8.1 Downloads folder.
 
@@ -41,7 +43,7 @@ Number of successful imports: 0
 
 I would like to know if there is a way to pass through this error.
 
-## Update
+## Case 2
 
 Instead of the Command Prompt, I have tried the Windows PowerShell as instructed [here](https://superuser.com/questions/1420011/how-do-i-install-drivers-silently-with-pnputil-exe).
 
@@ -75,7 +77,7 @@ PnPutil.exe -i -a <INF filename>
 * https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
 * https://ss64.com/nt/devcon.html
 
-The DevCon command can silently install the drivers without the certificate, so you can forget the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within certain Microsoft products.
+The DevCon command can silently install the drivers without the CAT certificate (in case it is broken), so you can use it instead of the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within certain Microsoft products.
 
 When installing the Microsoft products containing DevCon, you will, in order (according to [learn.microsoft.com](https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)):
 
@@ -85,3 +87,5 @@ When installing the Microsoft products containing DevCon, you will, in order (ac
 * Install the [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=2272234)
 
 Assuming you already have `devcon.exe` in your local environment, follow these steps:
+
+- ...
