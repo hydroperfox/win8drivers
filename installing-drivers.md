@@ -49,10 +49,15 @@ Instead of the Command Prompt, I have tried the Windows PowerShell as instructed
 
 Execute PowerShell as administrator and perform the following steps.
 
-1. Run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine`
-2. Navigate to your driver's folder containing the INF file through the `cd` command.
+1. Run
 
-Now run these commands to install your driver:
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+
+2. Change to your driver's folder containing the INF and CAT (certificate) files through the `cd` command.
+
+3. Run:
 
 ```
 $signature = Get-AuthenticodeSignature <CAT certificate filename>
@@ -65,18 +70,7 @@ PnPutil.exe -i -a <INF filename>
 
 </blockquote>
 
-I get this error at the `Add()` call:
-
-```
-Exception on calling "Add" with "1" argument: "The X509 certificate repository was not open."
-Linha:1 character:1
-+ $store.Add($signature.SignerCertificate)
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
-    + FullyQualifiedErrorId : CryptographicException
-```
-
-## Answer
+## DevCon
 
 * https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
 * https://ss64.com/nt/devcon.html
