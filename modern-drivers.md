@@ -77,7 +77,10 @@ PnPutil.exe -i -a <INF filename>
 * https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
 * https://ss64.com/nt/devcon.html
 
-The DevCon command can silently install the drivers without the CAT certificate (in case it is broken), so you can use it instead of the `pnputil.exe` command in this case. Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within certain Microsoft products.
+The DevCon command can silently install the drivers without the CAT certificate (in case it is broken), so you can use it instead of the `pnputil.exe` command in this case.
+
+<!--
+Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within certain Microsoft products.
 
 When installing the Microsoft products containing DevCon, you will, in order (according to [learn.microsoft.com](https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)):
 
@@ -85,6 +88,10 @@ When installing the Microsoft products containing DevCon, you will, in order (ac
 * Install Visual Studio 2022 (the [Community](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=17) edition for example)
 * Install [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
 * Install the [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=2272234)
+
+-->
+
+[Quick method to install DevCon.exe](https://superuser.com/questions/1002950/quick-method-to-install-devcon-exe)
 
 Assuming you already have `devcon.exe` in your local environment, follow these steps:
 
