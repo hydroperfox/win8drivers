@@ -85,7 +85,7 @@ Get-ChildItem "<full folder path>" -Recurse -Filter "*.inf" |
 ForEach-Object { PnPutil.exe -i -a $_.FullName }
 ```
 
-2. Open PowerShell and run:
+2. Open PowerShell as administrator and run:
 
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
