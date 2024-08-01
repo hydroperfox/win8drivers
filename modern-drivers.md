@@ -76,6 +76,26 @@ PnPutil.exe -i -a <INF filename>
 
 To disable driver signature enforcement, access the Recovery > Advanced Settings > Advanced Startup Options in the Boot menu.
 
+## Install all drivers in a folder through a PowerShell .ps1 script
+
+1. Save a file installdrivers.ps1 with the contents:
+
+```
+Get-ChildItem "<full folder path>" -Recurse -Filter "*.inf" | 
+ForEach-Object { PnPutil.exe -i -a $_.FullName }
+```
+
+2. Open PowerShell and run:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+
+3. `Browse to the directory containing the .ps1 script in PowerShell with the `cd` command and run it through
+
+```
+.\installdrivers.ps1
+```
 <!--
 
 ## DevCon
