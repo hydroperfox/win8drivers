@@ -2,7 +2,7 @@
 
 ## Export drivers from existing Windows installation into a folder
 
-In the command prompt, run:
+In the command prompt, run the following, substituting the `<full folder path>` sequence by the directory path:
 
 ```batch
 dism /online /export-driver /destination:<full folder path>
@@ -10,44 +10,13 @@ dism /online /export-driver /destination:<full folder path>
 
 You may then pass these drivers to a flash drive.
 
-<!--
-
-## Case 2
-
-Instead of the Command Prompt, I have tried the Windows PowerShell as instructed [here](https://superuser.com/questions/1420011/how-do-i-install-drivers-silently-with-pnputil-exe).
-
-<blockquote>
-
-Execute PowerShell as administrator and perform the following steps.
-
-1. Run
-
-```
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-```
-
-2. Change to your driver's folder containing the INF and CAT (certificate) files through the `cd` command.
-
-3. Run:
-
-```
-$signature = Get-AuthenticodeSignature <CAT certificate filename>
-$store = Get-Item -Path Cert:\LocalMachine\TrustedPublisher
-$store.Open("ReadWrite")
-$store.Add($signature.SignerCertificate)
-$store.Close()
-PnPutil.exe -i -a <INF filename>
-```
-
--->
-
 ## Disable driver signature enforcement
 
 To disable driver signature enforcement, access the Recovery > Advanced Settings > Advanced Startup Options in the Boot menu.
 
 ## Install all drivers in a folder through a PowerShell .ps1 script
 
-1. Save a file installdrivers.ps1 with the contents:
+1. Save a file installdrivers.ps1 with the contents, substituting `<full folder path>` by the directory path containing INF driver files:
 
 ```
 Get-ChildItem "<full folder path>" -Recurse -Filter "*.inf" | 
@@ -65,31 +34,5 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 .\installdrivers.ps1
 ```
-<!--
 
-## DevCon
-
-* https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
-* https://ss64.com/nt/devcon.html
-
-The DevCon command can silently install the drivers without the CAT certificate (in case it is broken), so you can use it instead of the `pnputil.exe` command in this case.
-
-<!--
-Note that DevCon does not come within your Windows installation; see first [Where can I download DevCon?](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon#where-can-i-download-devcon), as it comes within certain Microsoft products.
-
-When installing the Microsoft products containing DevCon, you will, in order (according to [learn.microsoft.com](https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk)):
-
-* Install [Microsoft .NET Framework 4.6](https://www.microsoft.com/pt-br/download/details.aspx?id=48137)
-* Install Visual Studio 2022 (the [Community](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=17) edition for example)
-* Install [Windows SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
-* Install the [Windows Driver Kit (WDK)](https://go.microsoft.com/fwlink/?linkid=2272234)
-
--->
-
-[Quick method to install DevCon.exe](https://superuser.com/questions/1002950/quick-method-to-install-devcon-exe)
-
-Assuming you already have `devcon.exe` in your local environment, follow these steps:
-
-- ...
-
--->
+Accept driver installation in every popup.
