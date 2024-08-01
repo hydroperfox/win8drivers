@@ -72,6 +72,12 @@ PnPutil.exe -i -a <INF filename>
 
 </blockquote>
 
+## Disable driver signature enforcement
+
+To disable driver signature enforcement, access the Recovery > Advanced Settings > Advanced Startup Options in the Boot menu.
+
+<!--
+
 ## DevCon
 
 * https://community.spiceworks.com/t/force-install-drivers-via-powershell/719454/6
@@ -96,3 +102,5 @@ When installing the Microsoft products containing DevCon, you will, in order (ac
 Assuming you already have `devcon.exe` in your local environment, follow these steps:
 
 - ...
+
+-->
