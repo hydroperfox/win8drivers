@@ -36,3 +36,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 
 Accept driver installation in every popup.
+
+## Notice
+
+Nothing of this worked for me as I got "Unknown device" for all drivers in my Device Manager. Troubleshoot does not work either.
