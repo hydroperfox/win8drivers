@@ -29,7 +29,7 @@ ForEach-Object { PnPutil.exe -i -a $_.FullName }
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
 
-3. `Browse to the directory containing the .ps1 script in PowerShell with the `cd` command and run it through
+3. Browse to the directory containing the .ps1 script in PowerShell with the `cd` command and run it through
 
 ```
 .\installdrivers.ps1
